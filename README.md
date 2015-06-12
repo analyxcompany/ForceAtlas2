@@ -58,3 +58,8 @@ layout.forceatlas2(data, directed=FALSE, iterations = 2000, plotstep = 100)
 
 When the input is a data frame, the output is also a data frame including the name of the nodes and positions.
 
+# Authors
+
+- Bazyli Klockiewicz (bazyli.klockiewicz@analyx.com)
+- Adolfo Alvarez (adolfo.alvarez@analyx.com)
+
