@@ -1,0 +1,16 @@
+Package: ForceAtlas2
+Type: Package
+Title: ForceAtlas2 layout for a network
+Version: 0.1
+Date: 2015-06-11
+Authors@R: c(person("Bazyli", "Klockiewicz", email = "bazyli.klockiewicz@analyx.com",
+                 role = c("aut")),
+                 person("Adolfo", "Alvarez", email = "adolfo.alvarez@analyx.com",
+                 role = c("aut", "cre")))
+Description: R implementation of the ForceAtlas2 graph layout designed originally for Gephi. The algorithm is detailed in: Jacomy M, Venturini T, Heymann S, Bastian M (2014) ForceAtlas2, a Continuous Graph Layout Algorithm for Handy Network Visualization Designed for the Gephi Software.
+Imports: 
+    igraph
+License: GPL (>= 2)
+LazyData: TRUE
+Suggests: knitr
+VignetteBuilder: knitr
