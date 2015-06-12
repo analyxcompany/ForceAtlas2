@@ -61,5 +61,5 @@ When the input is a data frame, the output is also a data frame including the na
 # Authors
 
 - Bazyli Klockiewicz (bazyli.klockiewicz@analyx.com)
-- Adolfo Alvarez (adolfo.alvarez@analyx.com)
+- Adolfo Álvarez (adolfo.alvarez@analyx.com)
 
