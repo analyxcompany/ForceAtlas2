@@ -125,6 +125,16 @@ layout.forceatlas2 <- function(graph, directed=TRUE, iterations = 100, linlog = 
     swing <- abs(colSums((Forces1-Forces2)^2)^(1/2))
     Global_swing <- sum((Deg + 1)*swing)
 
+    #If the swing of all nodes is zero, then convergence is reached and we break.
+    if(all(swing==0)){
+      if(!plotstep==0&dim==2){
+        plot(position, main=paste0("iteration: ",iteration), xlab="", ylab="")
+        if(plotlabels) text(position, labels=igraph::V(g)$name, cex= 0.7, pos=3)
+      }
+      print(paste0("Convergence reached at step ", iteration))
+      break
+    }
+    
     #### tra is the vector of the traction of all points
     tra <- abs(colSums((Forces1+Forces2)^2)^(1/2))/2
     Global_tra <- sum((Deg+1)*tra)
