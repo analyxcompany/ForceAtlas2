@@ -27,7 +27,7 @@
 
 layout.forceatlas2 <- function(graph, directed=TRUE, iterations = 100, linlog = FALSE, pos = NULL, nohubs = FALSE,
                                k = 400, gravity=1, ks=0.1, ksmax=10, delta = 1, center=NULL,
-                               tolerate = 0.1, dim = 2, plotstep=10, plotlabels=TRUE){
+                               tolerance = 0.1, dim = 2, plotstep=10, plotlabels=TRUE){
 
   if(igraph::is.igraph(graph)){
     g <- graph
@@ -140,7 +140,7 @@ layout.forceatlas2 <- function(graph, directed=TRUE, iterations = 100, linlog = 
     Global_tra <- sum((Deg+1)*tra)
 
     #### Global speed calculation
-    Global_speed <- tolerate * Global_tra/Global_swing
+    Global_speed <- tolerance * Global_tra/Global_swing
     #### speed is the vector of individual speeds of points
     speed <- ks * Global_speed /  (1 + Global_speed * (swing)^(1/2))
 
