@@ -36,7 +36,7 @@ layout.forceatlas2 <- function(graph, directed=TRUE, iterations = 100, linlog = 
   }
 
   A <- igraph::get.adjacency(g, type="both",
-                             attr=names(edge.attributes(g)), edges=FALSE, names=TRUE,
+                             attr=names(igraph::edge.attributes(g)), edges=FALSE, names=TRUE,
                              sparse=FALSE)
 
   #### center of gravity is by default set to the origin
@@ -134,7 +134,7 @@ layout.forceatlas2 <- function(graph, directed=TRUE, iterations = 100, linlog = 
       print(paste0("Convergence reached at step ", iteration))
       break
     }
-    
+
     #### tra is the vector of the traction of all points
     tra <- abs(colSums((Forces1+Forces2)^2)^(1/2))/2
     Global_tra <- sum((Deg+1)*tra)
