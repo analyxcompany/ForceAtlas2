@@ -34,9 +34,14 @@ layout.forceatlas2 <- function(graph, directed=TRUE, iterations = 100, linlog = 
   } else{
     g <- igraph::graph.data.frame(graph, directed=directed)
   }
-
+  
+  if(length(names(igraph::edge.attributes(g)))==0){
+    attr_g <- NULL
+  } else {
+    attr_g <- names(igraph::edge.attributes(g))
+  }
   A <- igraph::get.adjacency(g, type="both",
-                             attr=names(igraph::edge.attributes(g)), edges=FALSE, names=TRUE,
+                             attr=attr_g, edges=FALSE, names=TRUE,
                              sparse=FALSE)
 
   #### center of gravity is by default set to the origin
